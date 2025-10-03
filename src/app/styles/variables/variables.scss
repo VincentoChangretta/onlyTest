@@ -1,0 +1,42 @@
+:root {
+    // colors
+
+    --color-mainWhite: rgba(255, 255, 255, 1);
+    --color-mainBlue: rgb(56, 119, 238);
+    --color-secondaryBlue: rgb(66, 86, 122);
+    --color-secondaryBlue-border: rgba(66, 86, 122, 0.1);
+
+    --color-mainPink: rgb(239, 93, 168);
+
+    // fonts
+
+    --fontFamily-PTSans: "PT Sans", sans-serif;
+    --fontFamily-Bebas: "Bebas", sans-serif;
+
+    --fontSize-mainYears: 200px;
+    --fontSize-sliderYears: 25px;
+
+    --fontSize-mainTitle: 56px;
+
+    --fontSize-xs: 14px;
+    --fontSize-lg: 18px;
+    --fontSize-xl: 20px;
+
+    // line-height
+
+    --lineHeight-mainTitle: 67px;
+
+    // width
+
+    --width-container: 1440px;
+    --width-container-withBorder: calc(var(--width-container) + 2px);
+
+    --width-contentContainer: 1280px;
+    --width-contentContainerDistance: calc(
+        ((var(--width-container) - var(--width-contentContainer)) / 2) - var(--padding-container)
+    );
+
+    // padding
+
+    --padding-container: 10px;
+}

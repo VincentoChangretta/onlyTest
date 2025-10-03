@@ -1,0 +1,106 @@
+.container {
+    max-width: var(--width-container-withBorder);
+    padding: 170px var(--padding-container) 0;
+    margin: 0 auto;
+    border-inline: 1px solid var(--color-secondaryBlue-border);
+    transform: translateX(80px);
+    min-height: 100svh;
+}
+
+.contentContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    position: relative;
+    max-width: calc(353px + var(--width-contentContainerDistance));
+    padding-left: var(--width-contentContainerDistance);
+    margin-bottom: 96px;
+}
+
+.mainTitle::before {
+    content: "";
+    position: absolute;
+    left: calc(0px - var(--padding-container));
+    height: 100%;
+    width: 4px;
+    background-image: linear-gradient(to bottom, var(--color-mainBlue), var(--color-mainPink));
+}
+
+.historyCircle {
+    position: relative;
+}
+
+.mainYears {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    font-size: var(--fontSize-mainYears);
+    line-height: 160px;
+    letter-spacing: -2%;
+    margin: 0 auto;
+    font-weight: 700;
+    &__from {
+        color: var(--color-mainBlue);
+    }
+    &__to {
+        color: var(--color-mainPink);
+    }
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 536px;
+    width: 100%;
+    height: 530px;
+    border-radius: 50%;
+    border: 1px solid var(--color-secondaryBlue-border);
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    aspect-ratio: 1;
+    background: var(--color-secondaryBlue);
+    border-radius: 50%;
+    offset-path: circle(50% at 50% 50%);
+    offset-rotate: 0deg;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.dot:hover {
+    width: 65px;
+    border: 1px solid var(--color-secondaryBlue-border);
+    background-color: var(--color-mainWhite);
+}
+
+@keyframes move {
+    to {
+        offset-distance: 100%;
+    }
+}
+
+.horizontalLine {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    border: 1px solid var(--color-secondaryBlue-border);
+}
+.verticalLine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    border: 1px solid var(--color-secondaryBlue-border);
+}

@@ -1,0 +1,70 @@
+@use "./variables/variables.scss";
+
+@font-face {
+    font-family: "PT Sans";
+    src:
+        local("PT Sans"),
+        local("PTSans-Regular"),
+        url("/fonts/PTSans/PTSans-Regular.woff2") format("woff2"),
+        url("/fonts/PTSans/PTSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    src:
+        local("PT Sans Bold Italic"),
+        local("PTSans-BoldItalic"),
+        url("/fonts/PTSans/PTSans-BoldItalic.woff2") format("woff2"),
+        url("/fonts/PTSans/PTSans-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    src:
+        local("PT Sans Italic"),
+        local("PTSans-Italic"),
+        url("/fonts/PTSans/PTSans-Italic.woff2") format("woff2"),
+        url("/fonts/PTSans/PTSans-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    src:
+        local("PT Sans Bold"),
+        local("PTSans-Bold"),
+        url("/fonts/PTSans/PTSans-Bold.woff2") format("woff2"),
+        url("/fonts/PTSans/PTSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bebas";
+    src:
+        local("PT Sans Bold"),
+        local("PTSans-Bold"),
+        url("/fonts/PTSans/PTSans-Bold.woff2") format("woff2"),
+        url("/fonts/PTSans/PTSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue Cyrillic";
+    src:
+        local("Bebas Neue Cyrillic"),
+        url("/fonts/Bebas/BebasNeueCyrillic.woff2") format("woff2"),
+        url("/fonts/Bebas/BebasNeueCyrillic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+}
