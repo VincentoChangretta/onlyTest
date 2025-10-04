@@ -1,4 +1,4 @@
-import { HistoricalDates } from 'widgets/MainPageSections/ui/HistoricalDates';
+import { HistoricalDates } from 'widgets/MainPageSections';
 
 export const MainPage = () => {
    return (

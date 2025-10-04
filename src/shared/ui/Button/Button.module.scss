@@ -1,0 +1,27 @@
+.button {
+    background-color: var(--mainBg-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--mainBg-blue-darkest);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.rounded {
+    aspect-ratio: 1;
+    border-radius: 50%;
+}

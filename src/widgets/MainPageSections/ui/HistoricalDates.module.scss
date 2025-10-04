@@ -36,6 +36,11 @@
     justify-content: center;
     width: 100%;
     z-index: 0;
+    margin-bottom: 137px;
+}
+
+.timeline {
+    margin-bottom: 56px;
 }
 
 .mainYears {
@@ -57,69 +62,4 @@
         color: var(--color-mainPink);
         line-height: 160px;
     }
-}
-
-.circle {
-    position: absolute;
-    z-index: 6;
-    left: 50%;
-    top: 50%;
-    transform: translate(calc(-50% + 16px), calc(-50% + 16px));
-    width: 530px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 2px solid var(--color-secondaryBlue-border);
-}
-
-.circleLines {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    top: 50%;
-    transform: translate(calc(-50% + 16px), calc(-50% + 16px));
-}
-
-.dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 6px;
-    aspect-ratio: 1;
-    background: var(--color-secondaryBlue);
-    border-radius: 50%;
-    offset-path: circle(50% at 50% 50%);
-    offset-rotate: 0deg;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.dot:hover {
-    width: 65px;
-    border: 1px solid var(--color-secondaryBlue-border);
-    background-color: var(--color-mainWhite);
-}
-
-@keyframes move {
-    to {
-        offset-distance: 100%;
-    }
-}
-
-.horizontalLine,
-.verticalLine {
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(calc(-50%), calc(-50%));
-}
-
-.horizontalLine {
-    width: 100vw;
-    border: 1px solid var(--color-secondaryBlue-border);
-}
-
-.verticalLine {
-    height: 100vh;
-    border: 1px solid var(--color-secondaryBlue-border);
 }

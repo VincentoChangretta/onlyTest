@@ -4,10 +4,23 @@ import { BuildOptions } from '../types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
    const { isDev } = options;
-   const tsLoader = {
+   const tsLoader: RuleSetRule = {
       test: /\.tsx?$/,
       use: 'ts-loader',
       exclude: /node_modules/,
+   };
+
+   const cssLoader: RuleSetRule = {
+      test: /\.css$/i,
+      use: [
+         isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+         {
+            loader: 'css-loader',
+            options: {
+               importLoaders: 1,
+            },
+         },
+      ],
    };
 
    const scssLoader: RuleSetRule = {
@@ -30,5 +43,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
       ],
    };
 
-   return [tsLoader, scssLoader];
+   return [tsLoader, cssLoader, scssLoader];
 };

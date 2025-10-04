@@ -1,33 +1,8 @@
 import { Title } from 'shared/ui/Title/Title';
 import cls from './HistoricalDates.module.scss';
-
-interface CircleProps {
-   dots?: number;
-}
-
-export const Circle = (props: CircleProps) => {
-   const { dots = 6 } = props;
-   const safeDots = Math.min(Math.max(dots, 2), 6);
-   return (
-      <div>
-         <div className={cls.circle}>
-            {Array.from({ length: safeDots }).map((_, index) => (
-               <span
-                  key={index}
-                  className={cls.dot}
-                  style={{
-                     offsetDistance: `${(index * 100) / safeDots}%`,
-                  }}
-               />
-            ))}
-         </div>
-         <div className={cls.circleLines}>
-            <div className={cls.horizontalLine}></div>
-            <div className={cls.verticalLine}></div>
-         </div>
-      </div>
-   );
-};
+import { Circle, TimelineControls } from 'features/changeHistoricalYear';
+import { CategorySlider } from 'entities/historicalTimeline';
+import { timelineCategories } from 'entities/historicalTimeline/config/data/categories';
 
 export const HistoricalDates = () => {
    return (
@@ -47,6 +22,8 @@ export const HistoricalDates = () => {
                   </div>
                   <Circle />
                </article>
+               <TimelineControls className={cls.timeline} />
+               <CategorySlider categories={timelineCategories[0].events} />
             </div>
          </div>
       </section>
