@@ -1,11 +1,10 @@
 .container {
     max-width: var(--width-container-withBorder);
-    padding: 170px var(--padding-container) 0;
+    padding: clamp(100px, 12vh, 170px) var(--padding-container) 13px;
     margin: 0 auto;
     border-inline: 1px solid var(--color-secondaryBlue-border);
-    transform: translateX(80px);
+    transform: translateX(clamp(0px, 4.2vw, 80px));
     overflow: hidden;
-    min-height: 100svh;
 }
 
 .contentContainer {
@@ -29,37 +28,47 @@
     background-image: linear-gradient(to bottom, var(--color-mainBlue), var(--color-mainPink));
 }
 
-.historyCircle {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    z-index: 0;
-    margin-bottom: 137px;
-}
-
 .timeline {
     margin-bottom: 56px;
 }
 
-.mainYears {
-    position: relative;
-    z-index: 5;
-    max-width: 973px;
-    width: 100%;
+.sliderBox {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: var(--fontSize-mainYears);
-    letter-spacing: -2px;
-    font-weight: 700;
-    &__from {
-        color: var(--color-mainBlue);
-        line-height: 160px;
+    flex-direction: column;
+}
+
+@media (width < 1580px) {
+    .container {
+        transform: translateX(0px);
     }
-    &__to {
-        color: var(--color-mainPink);
-        line-height: 160px;
+}
+@media (width < 1200px) {
+    .mainTitle {
+        margin-bottom: 56px;
+        padding-left: 0;
+    }
+    .mainTitle::before {
+        display: none;
+    }
+    .container {
+        padding-inline: 20px;
+    }
+    .timeline {
+        margin-bottom: 0;
+    }
+    .sliderControls {
+        order: 3;
+        display: flex;
+        align-items: center;
+        gap: 38px;
+    }
+}
+
+@media (width < 700px) {
+    .container {
+        padding-top: 60px;
+    }
+    .mainTitle {
+        max-width: 123px;
     }
 }

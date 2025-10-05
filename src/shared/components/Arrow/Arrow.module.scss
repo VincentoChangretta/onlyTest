@@ -1,0 +1,13 @@
+.arrow {
+    stroke-width: 2;
+    fill: none;
+    transition: stroke 0.3s ease;
+
+    &.mainBlue {
+        stroke: var(--color-mainBlue);
+    }
+
+    &.secondaryBlue {
+        stroke: var(--color-secondaryBlue);
+    }
+}

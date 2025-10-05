@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    shape?: ButtonShape;
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button = memo((props: ButtonProps) => {
    const { className = '', children, shape = 'default', ...other } = props;
 
    const mods = {
@@ -25,4 +25,4 @@ export const Button = (props: ButtonProps) => {
          {children}
       </button>
    );
-};
+});

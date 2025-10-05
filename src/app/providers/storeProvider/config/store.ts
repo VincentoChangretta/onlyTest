@@ -11,7 +11,5 @@ export const createReduxStore = (initialState?: StateSchema) => {
       reducer: rootReducers,
       preloadedState: initialState,
       devTools: true,
-      //@ts-ignore
-      middleware: getDefaultMiddleware => getDefaultMiddleware().concat(productApi.middleware),
    });
 };

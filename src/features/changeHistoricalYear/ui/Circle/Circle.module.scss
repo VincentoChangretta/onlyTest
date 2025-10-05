@@ -1,3 +1,33 @@
+.historyCircle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 0;
+    margin-bottom: 137px;
+}
+
+.mainYears {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    font-size: var(--fontSize-mainYears);
+    letter-spacing: -2px;
+    font-weight: 700;
+    &__from {
+        color: var(--color-mainBlue);
+        line-height: var(--lineHeight-mainYears);
+    }
+    &__to {
+        color: var(--color-mainPink);
+        line-height: var(--lineHeight-mainYears);
+    }
+}
+
 .circle {
     position: absolute;
     z-index: 6;
@@ -8,6 +38,7 @@
     aspect-ratio: 1;
     border-radius: 50%;
     border: 2px solid var(--color-secondaryBlue-border);
+    // --phase: 0%;
 }
 
 .circleLines {
@@ -28,14 +59,37 @@
     border-radius: 50%;
     offset-path: circle(50% at 50% 50%);
     offset-rotate: 0deg;
-    transition: 0.2s;
+    transition:
+        width 0.2s,
+        background-color 0.2s,
+        border 0.2s;
     cursor: pointer;
 }
 
-.dot:hover {
-    width: 65px;
-    border: 1px solid var(--color-secondaryBlue-border);
+.dotIndex {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    color: var(--color-secondaryBlue);
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.dot:hover,
+.dot.active {
+    width: 60px;
+    border: 2px solid var(--color-secondaryBlue-border);
     background-color: var(--color-mainWhite);
+
+    & .dotIndex {
+        opacity: 1;
+        visibility: visible;
+        font-size: var(--fontSize-sm);
+    }
 }
 
 .horizontalLine,
@@ -53,12 +107,38 @@
 }
 
 .verticalLine {
-    height: 100vh;
+    height: 120vh;
     border: 1px solid var(--color-secondaryBlue-border);
 }
 
 @keyframes move {
     to {
         offset-distance: 100%;
+    }
+}
+
+@media (width < 1200px) {
+    .historyCircle {
+        justify-content: start;
+        margin-bottom: 57px;
+    }
+    .mainYears {
+        gap: 50px;
+    }
+    .circle {
+        display: none;
+    }
+    .horizontalLine,
+    .verticalLine {
+        display: none;
+    }
+    .mainYears {
+        gap: 50px;
+    }
+}
+
+@media (width < 700px) {
+    .mainYears {
+        gap: 30px;
     }
 }

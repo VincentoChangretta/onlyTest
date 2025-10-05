@@ -18,3 +18,23 @@
     letter-spacing: 0%;
     margin-bottom: 18px;
 }
+
+.arrow {
+    max-width: 9px;
+}
+
+@media (width < 400px) {
+    .stack {
+        margin-bottom: 10px;
+    }
+    .btnInner {
+        gap: 8px;
+    }
+    .btn {
+        width: 25px;
+    }
+
+    .arrow {
+        max-width: 5px;
+    }
+}

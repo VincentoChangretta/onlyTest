@@ -19,11 +19,18 @@
     --fontSize-mainTitle: 56px;
 
     --fontSize-xs: 14px;
+    --fontSize-sm: 16px;
     --fontSize-lg: 18px;
     --fontSize-xl: 20px;
 
     // line-height
 
+    --lineHeight-mainYears: 160px;
+
+    --lineHeight-xs: 17px;
+    --lineHeight-sm: 19px;
+
+    --lineHeight-xl: 30px;
     --lineHeight-mainTitle: 67px;
 
     // width
@@ -39,4 +46,14 @@
     // padding
 
     --padding-container: 10px;
+
+    @media (width < 1200px) {
+        --fontSize-mainYears: 130px;
+        --lineHeight-mainYears: 100%;
+    }
+    @media (width < 700px) {
+        --fontSize-mainYears: 56px;
+        --fontSize-mainTitle: 20px;
+        --lineHeight-mainTitle: 24px;
+    }
 }

@@ -1,5 +1,7 @@
 import { TimelineCategory } from '../../config/types/types';
 
 export interface HistoricalTimelineType {
-   currentCategory: TimelineCategory ;
+   index: number;
+   historicalTimelineData: TimelineCategory[];
+   currentCategory: TimelineCategory;
 }

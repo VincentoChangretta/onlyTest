@@ -1,10 +1,11 @@
 :root {
     --arrowDistance: 20px;
+    --arrowSize: 44px;
 }
 
 .wrapper {
     position: relative;
-    padding-right: var(--arrowDistance);
+    padding-right: calc(var(--arrowDistance) + var(--arrowSize));
 }
 
 .slide {
@@ -23,16 +24,16 @@
 .text {
     font-size: var(--fontSize-xl);
     color: var(--color-secondaryBlue);
-    line-height: 30px;
+    line-height: var(--lineHeight-xl);
 }
 
-.arrow {
+.arrowBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    width: 44px;
-    height: 44px;
+    width: var(--arrowSize);
+    aspect-ratio: 1;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     display: flex;
@@ -47,6 +48,16 @@
         transform: translateY(-50%) scale(1.1);
         box-shadow: 0px 0px 20px 0px rgba(43, 36, 233, 0.3);
     }
+
+    &.disabled {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.arrow {
+    max-width: 8px;
 }
 
 .prev {
@@ -54,5 +65,37 @@
 }
 
 .next {
-    left: 100%;
+    right: 0;
+}
+
+@media (width < 1200px) {
+    .wrapper {
+        padding-right: 0;
+    }
+    .arrowBtn {
+        display: none;
+    }
+}
+
+@media (width < 1200px) {
+    .wrapper {
+        margin-bottom: 78px;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-secondaryBlue-border);
+    }
+}
+
+@media (width < 400px) {
+    .slide {
+        max-width: 166px;
+    }
+    .year {
+        font-size: var(--fontSize-sm);
+        line-height: var(--lineHeight-sm);
+    }
+
+    .text {
+        font-size: var(--fontSize-xs);
+        line-height: var(--lineHeight-xs);
+    }
 }
