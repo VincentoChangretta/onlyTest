@@ -20,9 +20,10 @@ npm run build:dev
 # 🧪 Тесты
 npm run test
 
-#🧩 Storybook
-Запуск Storybook
+# 🧩 Storybook
+
+- Запуск Storybook
 npm run storybook
 
-# Сборка Storybook
+- Сборка Storybook
 npm run build-storybook
