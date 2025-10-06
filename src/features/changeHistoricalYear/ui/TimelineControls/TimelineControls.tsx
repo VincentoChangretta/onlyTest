@@ -9,14 +9,20 @@ import {
    getHistoricalTimelineData,
    getCurrentHistoricalTimelineIndex,
 } from 'entities/historicalTimeline';
+import { TimelinePagination } from '../TimelinePagination/TimelinePagination';
+import { useScreenWidth } from 'shared/hooks/useScreenWidth/useScreenWidth';
+import { BREAKPOINTS } from 'shared/consts/breakpoints';
 
 interface TimelineControlsProps {
    className?: string;
+   controlsClassName?: string;
+   pagination?: boolean;
 }
 
 export const TimelineControls = (props: TimelineControlsProps) => {
-   const { className } = props;
+   const { className, controlsClassName, pagination = false } = props;
    const dispatch = useDispatch();
+   const isLaptop = useScreenWidth(BREAKPOINTS.LAPTOP);
    const data = useSelector(getHistoricalTimelineData);
    const currentIndex = useSelector(getCurrentHistoricalTimelineIndex);
 
@@ -44,27 +50,28 @@ export const TimelineControls = (props: TimelineControlsProps) => {
             {String(current).padStart(2, '0')}/{String(total).padStart(2, '0')}
          </div>
 
-         <div className={cls.btnInner}>
-            <Button
-               shape='rounded'
-               className={cls.btn}
-               onClick={handleDispatchPrevCategory}
-               disabled={isPrevDisabled}
-            >
-               <Arrow
-                  direction='left'
-                  className={cls.arrow}
-               />
-            </Button>
+         <div className={classNames(controlsClassName)}>
+            <div className={cls.btnInner}>
+               <Button
+                  shape='rounded'
+                  onClick={handleDispatchPrevCategory}
+                  disabled={isPrevDisabled}
+               >
+                  <Arrow
+                     direction='left'
+                     className={cls.arrow}
+                  />
+               </Button>
 
-            <Button
-               shape='rounded'
-               className={cls.btn}
-               onClick={handleDispatchNextCategory}
-               disabled={isNextDisabled}
-            >
-               <Arrow className={cls.arrow} />
-            </Button>
+               <Button
+                  shape='rounded'
+                  onClick={handleDispatchNextCategory}
+                  disabled={isNextDisabled}
+               >
+                  <Arrow className={cls.arrow} />
+               </Button>
+            </div>
+            {pagination && isLaptop && <TimelinePagination />}
          </div>
       </article>
    );

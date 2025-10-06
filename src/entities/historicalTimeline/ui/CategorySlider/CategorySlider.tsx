@@ -100,14 +100,13 @@ export const CategorySlider = () => {
                   shortSwipes={true}
                   resistanceRatio={0.85}
                   watchSlidesProgress={true}
-                  // freeMode={{ enabled: true, momentum: true, sticky: false }}
                   breakpoints={{
                      0: {
                         slidesPerView: 'auto',
                         spaceBetween: 30,
                      },
                      600: {
-                        slidesPerView: 'auto',
+                        slidesPerView: 2, // было auto
                      },
                      1000: {
                         slidesPerView: 3,

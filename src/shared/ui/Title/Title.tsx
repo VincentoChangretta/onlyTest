@@ -1,36 +1,42 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import './Title.scss';
+import cls from './Title.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-export type TitleSize = 'main' | 'big' | 'middle' | 'small' | 'smallest';
-export type TitleFont = 'font-Bebas' | 'font-Montserrat';
-export type TitleWeight =
-   | 'font-thin'
-   | 'font-light'
-   | 'font-normal'
-   | 'font-medium'
-   | 'font-semibold'
-   | 'font-bold'
-   | 'font-extrabold';
+export type TitleSize = 'main' | 'smallest';
+export type TitleFont = 'Bebas' | 'PTSans';
+export type TitleWeight = 'thin' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
+export type TitleColor = 'mainBlue' | 'secondaryBlue';
 
 interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
+   className?: string;
    children: ReactNode;
    size?: TitleSize;
    font?: TitleFont;
    weight?: TitleWeight;
+   color?: TitleColor;
 }
 
 export const Title = ({
    children,
-   size = 'big',
+   size = 'main',
+   font = 'PTSans',
+   weight = 'normal',
+   color = 'secondaryBlue',
    className,
-   font = 'font-Bebas',
-   weight = 'font-normal',
    ...rest
 }: TitleProps) => {
+   const mods: Record<string, boolean> = {
+      [cls[`title__${size}`]]: true,
+      [cls[`font-${font}`]]: true,
+      [cls[`font-${weight}`]]: true,
+      [cls[`color-${color}`]]: true,
+   };
+
+   console.log(mods);
+
    return (
       <h2
-         className={classNames('title', {}, [`title__${size}`, font, weight, className])}
+         className={classNames(cls.title, mods, [className])}
          {...rest}
       >
          {children}

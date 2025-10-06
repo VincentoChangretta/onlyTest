@@ -1,0 +1,63 @@
+.title {
+    margin: 0;
+    padding: 0;
+    color: var(--color-secondaryBlue);
+    letter-spacing: -2px;
+    transition: all 0.2s ease;
+
+    &__main {
+        font: var(--fontSize-mainTitle) var(--fontFamily-PTSans);
+        line-height: var(--lineHeight-mainTitle);
+        color: var(--color-secondaryBlue);
+        letter-spacing: 0;
+    }
+
+    &__smallest {
+        font-size: var(--fontSize-smallestTitle);
+    }
+
+    &.font-Bebas {
+        font-family: var(--fontFamily-Bebas);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &.font-PTSans {
+        font-family: var(--fontFamily-PTSans);
+    }
+
+    &.font-thin {
+        font-weight: 100;
+    }
+
+    &.font-light {
+        font-weight: 300;
+    }
+
+    &.font-normal {
+        font-weight: 400;
+    }
+
+    &.font-medium {
+        font-weight: 500;
+    }
+
+    &.font-semibold {
+        font-weight: 600;
+    }
+
+    &.font-bold {
+        font-weight: 700;
+    }
+
+    &.font-extrabold {
+        font-weight: 800;
+    }
+
+    &.color-mainBlue {
+        color: var(--color-mainBlue);
+    }
+    &.color-secondaryBlue {
+        color: var(--color-secondaryBlue);
+    }
+}

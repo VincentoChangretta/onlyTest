@@ -2,19 +2,19 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 interface UseCirclePhaseProps {
-   n: number;
+   dotsQuantity: number;
    currentIndex: number;
 }
 
-export const useCirclePhase = ({ n, currentIndex }: UseCirclePhaseProps) => {
+export const useCirclePhase = ({ dotsQuantity, currentIndex }: UseCirclePhaseProps) => {
    const circleRef = useRef<HTMLDivElement>(null);
    const phaseRef = useRef(0);
    const firstRenderRef = useRef(true);
 
    useLayoutEffect(() => {
-      if (!circleRef.current || n === 0) return;
+      if (!circleRef.current || dotsQuantity === 0) return;
 
-      const stepPct = 100 / n;
+      const stepPct = 100 / dotsQuantity;
       const TARGET_AT_45 = 83.3;
 
       let target = TARGET_AT_45 - currentIndex * stepPct;
@@ -46,7 +46,7 @@ export const useCirclePhase = ({ n, currentIndex }: UseCirclePhaseProps) => {
             });
          },
       });
-   }, [currentIndex, n]);
+   }, [currentIndex, dotsQuantity]);
 
    return { circleRef };
 };

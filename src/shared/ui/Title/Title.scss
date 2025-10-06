@@ -1,9 +1,0 @@
-.title {
-    letter-spacing: -2px;
-    &__main {
-        font: 700 var(--fontSize-mainTitle) var(--fontFamily-PTSans);
-        line-height: var(--lineHeight-mainTitle);
-        color: var(--color-secondaryBlue);
-        letter-spacing: 0px;
-    }
-}

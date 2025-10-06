@@ -1,6 +1,5 @@
 .button {
-    background-color: var(--mainBg-blue);
-    color: white;
+    max-width: 200px;
     border: none;
     cursor: pointer;
     font-weight: 600;
@@ -11,17 +10,24 @@
     justify-content: center;
     transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: var(--mainBg-blue-darkest);
-    }
-
     &:disabled {
         opacity: 0.5;
         cursor: not-allowed;
+    }
+
+    svg {
+        max-width: 10px;
     }
 }
 
 .rounded {
     aspect-ratio: 1;
     border-radius: 50%;
+}
+
+.slider {
+    width: 50px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(66, 86, 122, 0.5);
+    background-color: var(--color-mainWhite);
 }

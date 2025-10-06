@@ -4,3 +4,4 @@ export { getCurrentHistoricalTimelineIndex } from './model/selectors/getCurrentH
 export { CategorySlider } from './ui/CategorySlider/CategorySlider';
 export { historicalTimelineReducer, historicalTimelineActions } from './model/slice/historicalTimelineSlice';
 export type { HistoricalTimelineType } from './model/types/types';
+export type { TimelineCategory } from './config/types/types';

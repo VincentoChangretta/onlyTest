@@ -1,0 +1,50 @@
+.mainYears {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    font-size: var(--fontSize-mainYears);
+    letter-spacing: -2px;
+    font-weight: 700;
+    &__from {
+        color: var(--color-mainBlue);
+        line-height: var(--lineHeight-mainYears);
+    }
+    &__to {
+        color: var(--color-mainPink);
+        line-height: var(--lineHeight-mainYears);
+    }
+}
+
+
+.currentTitle {
+    display: none;
+}
+
+.currentTitle {
+    font-size: var(--fontSize-xl);
+    line-height: var(--lineHeight-xl);
+    font-weight: 700;
+    transition: 0.3s;
+    color: var(--color-secondaryBlue);
+}
+
+@media (max-width: $media-laptop) {
+
+    .currentTitle {
+        display: block;
+        margin-bottom: 28px;
+    }
+    .mainYears {
+        gap: 50px;
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: $media-mobile) {
+    .mainYears {
+        gap: 30px;
+    }
+}

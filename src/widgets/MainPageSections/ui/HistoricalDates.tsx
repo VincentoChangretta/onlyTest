@@ -10,6 +10,7 @@ export const HistoricalDates = () => {
             <Title
                size='main'
                className={cls.mainTitle}
+               weight='bold'
             >
                Исторические даты
             </Title>
@@ -17,7 +18,11 @@ export const HistoricalDates = () => {
                <Circle />
                <div className={cls.sliderBox}>
                   <div className={cls.sliderControls}>
-                     <TimelineControls className={cls.timeline} />
+                     <TimelineControls
+                        className={cls.timeline}
+                        controlsClassName={cls.controls}
+                        pagination
+                     />
                   </div>
                   <CategorySlider />
                </div>

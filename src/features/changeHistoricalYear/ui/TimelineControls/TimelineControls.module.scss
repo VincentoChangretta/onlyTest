@@ -4,12 +4,6 @@
     gap: 20px;
 }
 
-.btn {
-    width: 50px;
-    aspect-ratio: 1;
-    border: 1px solid rgba(66, 86, 122, 0.5);
-}
-
 .stack {
     font: inherit;
     font-size: var(--fontSize-xs);
@@ -23,7 +17,7 @@
     max-width: 9px;
 }
 
-@media (width < 400px) {
+@media (max-width: $media-small) {
     .stack {
         margin-bottom: 10px;
     }

@@ -1,0 +1,25 @@
+.horizontalLine,
+.verticalLine {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(calc(-50%), calc(-50%));
+}
+
+.horizontalLine {
+    width: 100vw;
+    border: 1px solid var(--color-secondaryBlue-border);
+}
+
+.verticalLine {
+    height: 120vh;
+    border: 1px solid var(--color-secondaryBlue-border);
+}
+
+@media (max-width: $media-laptop) {
+    .horizontalLine,
+    .verticalLine {
+        display: none;
+    }
+}
