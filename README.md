@@ -17,11 +17,11 @@ npm run build:prod
 # Сборка development-версии
 npm run build:dev
 
-🧪 Тесты
+# 🧪 Тесты
 npm run test
 
-🧩 Storybook
-# Запуск Storybook
+#🧩 Storybook
+Запуск Storybook
 npm run storybook
 
 # Сборка Storybook
